@@ -1,0 +1,41 @@
+{
+    "vim.easymotion": true,
+    "vim.incsearch": true,
+    "vim.useSystemClipboard": true,
+    "vim.useCtrlKeys": true,
+    "vim.hlsearch": true,
+    "vim.leader": "<space>",
+    "vim.visualstar": true,
+    "vim.insertModeKeyBindings": [
+        {
+            "before": ["j", "k"],
+            "after": ["<Esc>"]
+        }
+    ],
+    "vim.handleKeys": { 
+        "<C-d": true,
+        "<C-f>": false 
+    },
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": ["j"],
+            "after": ["g", "j"]
+        },
+        {
+            "before": ["k"],
+            "after": ["g", "k"]
+        },
+        {
+            "before": ["<leader>", "f", "s"],
+            "commands": [":w"]
+        },
+        {
+            "before": ["<leader>", "m", "t"],
+            "commands": ["bookmarks.toggle"]
+        },
+        {
+            "before": ["<leader>", "m", "l"],
+            "commands": ["bookmarks.list"]
+        }
+    ],
+}
