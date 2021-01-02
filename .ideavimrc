@@ -1,0 +1,15 @@
+" Copy to system clipboard as well
+set clipboard+=unnamed
+
+let mapleader = " "
+
+" Multiple cursors support
+set multiple-cursors
+
+" Use Q in visual mode to format selection
+vmap Q gq
+
+nmap <leader>fs <M-S>
+
+" Use jk to escape from insert mode
+imap jk <Esc>
