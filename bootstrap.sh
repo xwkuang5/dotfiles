@@ -25,12 +25,23 @@ function emacs() {
 		git clone https://github.com/plexus/chemacs.git ~/chemacs
 		~/chemacs/install.sh
 
+	read -p "Install spacemacs? (y/n) " -n 1;
+	echo "";
+	if [[ $REPLY =~ ^[Yy]$ ]]; then
 		# Install spacemacs
 		git clone https://github.com/syl20bnr/spacemacs ~/spacemacs
 		pushd ~/spacemacs && git checkout develop && popd
+	fi;
+
+	read -p "Install my own configuration? (y/n) " -n 1;
+	echo "";
+	if [[ $REPLY =~ ^[Yy]$ ]]; then
+		# Install my own configuration
+		git clone https://github.com/xwkuang5/emacs.d.git ~/emacs.d
+	fi;
 
 		echo "Done..."
-		echo "Use emacs --with-profile <profile> to launch emacs (default: spacemacs)"
+		echo "Use emacs --with-profile <profile> to launch emacs (default: default (mine))"
 	fi;
 }
 
