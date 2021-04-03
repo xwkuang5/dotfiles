@@ -1,3 +1,19 @@
 # Automatically normalize line endings for all text-based files
 #* text=auto
 # Disabled because of https://github.com/mathiasbynens/dotfiles/issues/149 :(
+
+# Upon checking out .gitignore files (excluding .gitignore)
+# Run merge_gitignore_files to regenerate the .gitignore file
+# by merging all .*.gitignore files in the current directory.
+# Sample implementation of merge_gitignore_files
+# function merge_gitignore_files
+#     rm -f .gitignore
+#     echo "Merging .gitignore files..."
+#     for file in (ls -a | grep "\..*\.gitignore")
+#         cat $file >> .gitignore
+#     end
+#     echo "Done!"
+# end
+# git config --global filter.gitignoremerger.clean cat
+# git config --global filter.gitignoremerger.smudge merge_gitignore_files
+.*.gitignore filter=gitignoremerger
